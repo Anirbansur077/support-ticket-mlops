@@ -22,4 +22,9 @@ priority and escalation risk at intake to enable automated routing.
 - Real production data (synthetic/public data only)
 
 ## Dataset Strategy
-[To be finalized in Phase 1]
+Multilingual Customer Support Tickets (Kaggle), filtered to English and
+cleaned (11,922 tickets). Priority label sourced from original data;
+escalation risk engineered via rule-based logic requiring severe ticket
+type, high priority, and a severity tag together (see
+docs/labeling_methodology.md) — ~21% positive class. Time-based 80/20
+split (train: Jan 2025–Apr 2026, val: May–Aug 2026).
