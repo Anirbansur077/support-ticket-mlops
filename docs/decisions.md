@@ -23,3 +23,11 @@ construction. Full analysis in docs/model_findings.md.
 Logged baseline, untuned XGBoost, and tuned XGBoost runs with full
 params/metrics via MLflow (SQLite backend). Registered best model
 (PR-AUC 0.763) as ticket-escalation-model v1, tagged as production alias.
+
+## [date] — Serving layer complete with passing tests
+Built FastAPI app with /health and /predict endpoints, loading saved
+model artifacts at startup. Dockerized and verified identical predictions
+between local and containerized runs. Added pytest integration tests
+(health check, valid prediction, invalid input validation) — all passing.
+Required adding __init__.py files and pytest.ini (pythonpath = .) to
+resolve module imports correctly.
