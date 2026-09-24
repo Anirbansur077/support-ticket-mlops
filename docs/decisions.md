@@ -18,3 +18,8 @@ model underperformed (0.59 accuracy) — traced to likely label noise via
 confusion matrix analysis, not a feature/model deficiency. SHAP confirms
 escalation model learned coherent patterns consistent with label
 construction. Full analysis in docs/model_findings.md.
+
+## [date] — MLflow tracking and model registry set up
+Logged baseline, untuned XGBoost, and tuned XGBoost runs with full
+params/metrics via MLflow (SQLite backend). Registered best model
+(PR-AUC 0.763) as ticket-escalation-model v1, tagged as production alias.
