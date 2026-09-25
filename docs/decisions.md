@@ -31,3 +31,11 @@ between local and containerized runs. Added pytest integration tests
 (health check, valid prediction, invalid input validation) — all passing.
 Required adding __init__.py files and pytest.ini (pythonpath = .) to
 resolve module imports correctly.
+
+## [date] — Automated retraining and promotion logic built
+Extracted training pipeline from notebooks into src/models/train.py for
+automation. Built promote_if_better() function comparing new model PR-AUC
+against current production model in MLflow registry, only promoting on
+genuine improvement. Validated both paths: successful promotion (no prior
+production model) and correct rejection (new model tied with existing
+production, PR-AUC 0.7634 both).
