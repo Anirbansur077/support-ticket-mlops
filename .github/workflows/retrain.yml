@@ -23,5 +23,8 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Prepare data
+        run: python src/data/prepare_data.py
+
       - name: Run retraining and promotion
         run: python src/models/train.py
