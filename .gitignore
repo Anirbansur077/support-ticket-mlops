@@ -5,6 +5,7 @@ __pycache__/
 .venv/
 venv/
 data/raw/*
+!data/raw/tickets.csv
 data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
