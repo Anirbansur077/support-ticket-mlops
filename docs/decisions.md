@@ -39,3 +39,15 @@ against current production model in MLflow registry, only promoting on
 genuine improvement. Validated both paths: successful promotion (no prior
 production model) and correct rejection (new model tied with existing
 production, PR-AUC 0.7634 both).
+
+## [date] — CI/CD retraining pipeline working end-to-end
+Built two GitHub Actions workflows: (1) run tests on every push, (2) 
+automated retrain + promotion, triggered manually or weekly via cron.
+Debugged two real issues to get the retrain workflow working: missing
+data-preparation step in the workflow YAML, and a missing os.makedirs()
+call causing the pipeline to fail when data/processed/ didn't exist on
+a fresh runner (gitignored, so never present on a clean checkout).
+Committed the raw source CSV (18MB, under GitHub's limit) so the full
+pipeline — raw data to trained, evaluated, and registered model — is
+reproducible from source on any machine, not dependent on pre-generated
+files.
