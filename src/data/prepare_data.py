@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 
@@ -13,6 +14,7 @@ def compute_escalation_risk(row):
 
 
 def main():
+    os.makedirs('data/processed', exist_ok=True)
     df = pd.read_csv('data/raw/tickets.csv')
 
     df_en = df[df['language'] == 'en'].copy()
