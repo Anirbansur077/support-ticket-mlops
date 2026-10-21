@@ -6,7 +6,7 @@ and delayed response to high-risk tickets. This project predicts ticket
 priority and escalation risk at intake to enable automated routing.
 
 ## Success Metrics
-- Model: PR-AUC > 0.75 for escalation risk (imbalanced class)
+- Model: PR-AUC 0.763 ,target> 0.75 met for escalation risk (imbalanced class)
 - System: automated retraining pipeline that only promotes models
   beating the current production baseline
 - Business framing: reduction in simulated SLA breaches vs. baseline

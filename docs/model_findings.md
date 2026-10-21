@@ -39,3 +39,13 @@ label-construction features means this is primarily a consistency check
 rather than a novel discovery.
 
 ![SHAP summary plot](shap_summary_escalation.png)
+
+## Drift Detection Validation
+Verified Evidently AI drift detection correctly distinguishes real drift
+from normal variation: comparing train vs. validation splits (same
+underlying data distribution) showed 0% drift. A simulated drift event
+(artificially spiking "Incident" ticket type to 40% of traffic and
+doubling average ticket body length) was correctly detected — flagged
+specifically on the two affected columns (text_length, type) while
+leaving unaffected columns (queue, priority) correctly unflagged,
+confirming precise, not blanket, drift detection.
